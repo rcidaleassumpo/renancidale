@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'renancidale';
+  links = ['About', 'Contact', 'Third'];
+  activeLink = this.links[0];
+  background = '';
 }

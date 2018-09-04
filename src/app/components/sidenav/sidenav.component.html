@@ -1,36 +1,50 @@
 <mat-sidenav-container class="app-sidenav-container">
-  <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10">
+  <mat-sidenav #sidenav class="app-sidenav">
     <mat-toolbar color="primary">
       Menu
     </mat-toolbar>
     <mat-nav-list>
-      <mat-list-item *ngFor="let link of links">
-        <a matLine href="">{{ link }}</a>
+      <mat-list-item class="linksSidebar">
+        <a matLine [routerLink]="''">Home</a>
+      </mat-list-item>
+      <mat-list-item class="linksSidebar">
+        <a matLine [routerLink]="'/about'">About</a>
+      </mat-list-item>
+      <mat-list-item class="linksSidebar">
+        <a matLine [routerLink]="'/projects'">Projects</a>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
-
   <mat-sidenav-content>
     <div *ngIf="isScreenSmall()">
       <mat-toolbar color="primary">
         <button fxFlex="20" mat-button (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
-        <div fxFlex fxLayoutAlign="center">Title</div>
+        <!-- <div fxFlex fxLayoutAlign="center">Renan Cidale</div> -->
       </mat-toolbar>
     </div>
     <div *ngIf="!isScreenSmall()">
       <mat-toolbar color="primary">
-        <h1>Title</h1>
         <span fxFlex></span>
-        <div fxLayoutGap="10px" fxLayout="row">
-          <h3>Item 1</h3>
-          <h3>Item 2</h3>
-          <h3>Item 3</h3>
-        </div>
+        <mat-nav-list style="margin-right: 100px" fxLayoutGap="10px" fxLayout="row">
+          <!-- <mat-list-item class="linksNavbar" *ngFor="let link of links">
+            <a matLine routerLinkActive="router-link-active" >{{ link }}</a>
+          </mat-list-item> -->
+          <mat-list-item class="linksNavbar">
+            <a matLine [routerLink]="''">Home</a>
+          </mat-list-item>
+          <mat-list-item class="linksNavbar">
+            <a matLine [routerLink]="'/about'">About</a>
+          </mat-list-item>
+          <mat-list-item class="linksNavbar">
+            <a matLine [routerLink]="'/projects'">Projects</a>
+          </mat-list-item>
+        </mat-nav-list>
       </mat-toolbar>
     </div>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
-
-
 </mat-sidenav-container>
+
+

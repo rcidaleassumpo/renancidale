@@ -34,10 +34,13 @@ import {
     MatTooltipModule
 } from '@angular/material';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+
 import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
     imports: [
+        FontAwesomeModule,
         CdkTableModule,
         MatAutocompleteModule,
         MatButtonModule,
@@ -73,6 +76,7 @@ import { CdkTableModule } from '@angular/cdk/table';
         MatTooltipModule
     ],
     exports: [
+        FontAwesomeModule,
         CdkTableModule,
         MatAutocompleteModule,
         MatButtonModule,

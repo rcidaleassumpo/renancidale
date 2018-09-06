@@ -5,14 +5,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { SocialmedialinksModule } from './shared/socialmedialinks/socialmedialinks.module';
 
 
 const routes: Routes = [
+  { path: '', loadChildren: 'src/app/home/home.module#HomeModule' },
   { path: 'about', loadChildren: 'src/app/about/about.module#AboutModule' },
   { path: 'projects', loadChildren: 'src/app/projects/projects.module#ProjectsModule' },
-  { path: '**', redirectTo: 'about', pathMatch: 'full' }
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -24,7 +26,7 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule,
+    SocialmedialinksModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

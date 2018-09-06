@@ -34,12 +34,13 @@ import {
     MatTooltipModule
 } from '@angular/material';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
     imports: [
+        FlexLayoutModule,
         FontAwesomeModule,
         CdkTableModule,
         MatAutocompleteModule,
@@ -76,6 +77,7 @@ import { CdkTableModule } from '@angular/cdk/table';
         MatTooltipModule
     ],
     exports: [
+        FlexLayoutModule,
         FontAwesomeModule,
         CdkTableModule,
         MatAutocompleteModule,
